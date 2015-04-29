@@ -1,0 +1,54 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+
+    tools:context="com.example.jesse.hidebuttonproject.TeamCheckList">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Price Sold"
+        android:id="@+id/PriceSold"
+        android:layout_alignBaseline="@+id/PricePaidLabel"
+        android:layout_alignBottom="@+id/PricePaidLabel"
+        android:layout_alignRight="@+id/listView1"
+        android:layout_alignEnd="@+id/listView1"
+        android:layout_marginRight="13dp"
+        android:layout_marginEnd="13dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Price Paid"
+        android:id="@+id/PricePaidLabel"
+        android:layout_marginRight="29dp"
+        android:layout_marginEnd="29dp"
+        android:layout_toLeftOf="@+id/PriceSold"
+        android:layout_toStartOf="@+id/PriceSold" />
+
+    <ListView
+        android:id="@+id/listView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonSave"
+        android:layout_below="@+id/PriceSold">
+    </ListView>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:id="@+id/buttonSave"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"></Button>
+
+</RelativeLayout>
