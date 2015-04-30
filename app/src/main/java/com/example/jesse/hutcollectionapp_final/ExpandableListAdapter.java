@@ -5,10 +5,12 @@ package com.example.jesse.hutcollectionapp_final;
         import java.util.List;
         import android.content.Context;
         import android.graphics.Typeface;
+        import android.graphics.drawable.Drawable;
         import android.view.LayoutInflater;
         import android.view.View;
         import android.view.ViewGroup;
         import android.widget.BaseExpandableListAdapter;
+        import android.widget.ImageView;
         import android.widget.ProgressBar;
         import android.widget.TextView;
 
@@ -16,10 +18,9 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
 
     private Context _context;
     private List<String> _listDataHeader; // header titles
+
     // child data in format of header title, child title
     private HashMap<String, List<String>> _listDataChild;
-
-
 
     public ExpandableListAdapter(Context context, List<String> listDataHeader,
                                  HashMap<String, List<String>> listChildData) {
@@ -76,6 +77,24 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
         int progress = (int) (((double) valueCounter / (double) playerCounter) * 100);
         pBar.setSecondaryProgress(progress);
         tv.setText("" + valueCounter + "/" + playerCounter);
+
+        //get correct image for NHL list view item
+       ImageView logo = (ImageView)(convertView.findViewById(R.id.imageViewLogo));
+
+        //gets instance of myLoc images
+        ImgLocation myLoc = new ImgLocation();
+
+        //checks if group is 0, which is the group NHL is in
+        if(groupPosition == 0)
+        {
+            //gets the array of team logos
+            logo.setImageResource(myLoc.getPlayerImages()[childPosition]);
+        }
+        else
+        {
+            //if not in the first group position, returns the app's logo as default.
+            logo.setImageResource(myLoc.getDrawLogo());
+        }
 
         return convertView;
     }

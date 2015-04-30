@@ -6,10 +6,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ExpandableListView;
 import android.widget.TextView;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -38,8 +36,6 @@ public class LeagueTeamListView extends ActionBarActivity {
 
         // setting list adapter
         expListView.setAdapter(listAdapter);
-
-
     }
 
     @Override
@@ -65,26 +61,54 @@ public class LeagueTeamListView extends ActionBarActivity {
         List<String> nhl = new ArrayList<String>();
         nhl.add("Anaheim Ducks");
         nhl.add("Arizona Coyotes");
-        //nhl.add("Boston Bruins");
+        nhl.add("Boston Bruins");
+        nhl.add("Buffalo Sabres");
+        nhl.add("Calgary Flames");
+        nhl.add("Carolina Hurricanes");
+        nhl.add("Chicago Blackhawks");
+        nhl.add("Colorado Avalanche");
+        nhl.add("Columbus Blue Jackets");
+        nhl.add("Dallas Stars");
+        nhl.add("Detroit Red Wings");
+        nhl.add("Edmonton Oilers");
+        nhl.add("Florida Panthers");
+        nhl.add("Los Angeles Kings");
+        nhl.add("Minnesota Wild");
+        nhl.add("Montreal Canadiens");
+        nhl.add("Nashville Predators");
+        nhl.add("New Jersey Devils");
+        nhl.add("New York Islanders");
+        nhl.add("New York Rangers");
+        nhl.add("Ottawa Senators");
+        nhl.add("Philadelphia Flyers");
+        nhl.add("Pittsburgh Penguins");
+        nhl.add("San Jose Sharks");
+        nhl.add("St. Louis Blues");
+        nhl.add("Tampa Bay Lightning");
+        nhl.add("Toronto Maple Leafs");
+        nhl.add("Vancouver Canucks");
+        nhl.add("Washington Capitals");
+        nhl.add("Winnipeg Jets");
 
         List<String> ahl = new ArrayList<String>();
-        ahl.add("The Conjuring");
-        ahl.add("Despicable Me 2");
-        ahl.add("Turbo");
-        ahl.add("Grown Ups 2");
-        ahl.add("Red 2");
-        ahl.add("The Wolverine");
+        ahl.add("Adirondack Flames");
+        ahl.add("Albany Devils");
+        ahl.add("Binghamton Senators");
+        ahl.add("Bridgeport Sound Tigers");
+        ahl.add("Charlotte Checkers");
+        ahl.add("Chicago Wolves");
 
         List<String> shl = new ArrayList<String>();
-        shl.add("2 Guns");
-        shl.add("The Smurfs 2");
-        shl.add("The Spectacular Now");
-        shl.add("The Canyons");
-        shl.add("Europa Report");
+        shl.add("Brynäs IF");
+        shl.add("Djurgårdens Hockey");
+        shl.add("Färjestad BK");
+        shl.add("Frölunda Indians");
+        shl.add("HV71");
 
         listDataChild.put(listDataHeader.get(0), nhl); // Header, Child data
         listDataChild.put(listDataHeader.get(1), ahl);
         listDataChild.put(listDataHeader.get(2), shl);
+
 
         // Listview on child click listener
         expListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
