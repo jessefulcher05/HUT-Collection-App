@@ -79,22 +79,20 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
         tv.setText("" + valueCounter + "/" + playerCounter);
 
         //get correct image for NHL list view item
-       ImageView logo = (ImageView)(convertView.findViewById(R.id.imageViewLogo));
+       ImageView teamLogoIV = (ImageView)(convertView.findViewById(R.id.imageViewLogo));
 
         //gets instance of myLoc images
         ImgLocation myLoc = new ImgLocation();
 
-        //checks if group is 0, which is the group NHL is in
-        if(groupPosition == 0)
-        {
-            //gets the array of team logos
-            logo.setImageResource(myLoc.getPlayerImages()[childPosition]);
-        }
+       if(groupPosition == 0)
+       {
+           teamLogoIV.setImageResource(myLoc.getTeamImagesAtIndex(childPosition));
+       }
         else
-        {
+       {
             //if not in the first group position, returns the app's logo as default.
-            logo.setImageResource(myLoc.getDrawLogo());
-        }
+            teamLogoIV.setImageResource(myLoc.getDrawLogo());
+       }
 
         return convertView;
     }
@@ -134,6 +132,17 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
                 .findViewById(R.id.lblListHeader);
         lblListHeader.setTypeface(null, Typeface.BOLD);
         lblListHeader.setText(headerTitle);
+
+        //sets logo to correct league logo
+        ImageView leagueLogoiv = (ImageView)(convertView.findViewById(R.id.imageViewLeagueLogo));
+
+        //int nhlLogo = R.drawable.nhl;
+
+        //gets instance of myLoc images
+        ImgLocation myLoc = new ImgLocation();
+
+        //searches array in other class, returns the image at this group position
+        leagueLogoiv.setImageResource(myLoc.getLeagueImagesAtIndex(groupPosition));
 
         return convertView;
     }

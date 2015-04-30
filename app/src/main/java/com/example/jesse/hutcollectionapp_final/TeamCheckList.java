@@ -26,7 +26,7 @@ public class TeamCheckList extends ActionBarActivity {
     String teamName;
     //array list of my database items
     ArrayList<Player> playerItems;
-    //update button
+    //update leagueheaderbackground
     Button updateButton;
     //playerdb
     PlayerDB db = new PlayerDB(this);
@@ -39,7 +39,7 @@ public class TeamCheckList extends ActionBarActivity {
 
         Bundle extras = getIntent().getExtras();
         if(extras !=null) {
-            //passes in text on button to equal teamName
+            //passes in text on leagueheaderbackground to equal teamName
             teamName = extras.getString("KEY");
 
             //sets title to team name
@@ -183,7 +183,7 @@ public class TeamCheckList extends ActionBarActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
+        // automatically handle clicks on the Home/Up leagueheaderbackground, so long
         // as you specify a parent activity in AndroidManifest.xml.
 
         //calls method that displays message on back only if items have not been saved

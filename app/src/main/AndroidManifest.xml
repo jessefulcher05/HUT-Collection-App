@@ -25,5 +25,6 @@
             android:label="@string/title_activity_team_check_list" >
         </activity>
     </application>
+    <uses-permission android:name="android.permission.VIBRATE"></uses-permission>
 
 </manifest>

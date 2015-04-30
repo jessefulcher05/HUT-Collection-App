@@ -43,20 +43,30 @@ public class ImgLocation {
     int caps = R.drawable.capitals;
     int jets = R.drawable.jets;
 
-    int[] myIntArray = {ducks,coyotes,bruins,sabres,flames,hurricanes,blackhawks,avs,bluejackets,stars
+    int[] myTeamImageArray = {ducks,coyotes,bruins,sabres,flames,hurricanes,blackhawks,avs,bluejackets,stars
             ,redwings,oilers,panthers,kings,wild,canadiens,predators,devils,islanders,rangers,senators
             ,flyers,pens,sharks,blues,lighting,leafs,canucks,caps,jets};
+
+    //league logos
+    int nhl = R.drawable.nhl;
+    int ahl = R.drawable.ahl;
+    int shl = R.drawable.shl;
+
+    int[] myLeagueImageArray = {nhl,ahl,shl};
 
     //constructor
     public ImgLocation(){
 
     }
 
-    public int[] getPlayerImages(){
-        return myIntArray;
+    public int getTeamImagesAtIndex(int i){
+        return myTeamImageArray[i];
     }
     public int getDrawLogo(){
         return drawLogo;
+    }
+    public int getLeagueImagesAtIndex(int i){
+        return myLeagueImageArray[i];
     }
 }
 

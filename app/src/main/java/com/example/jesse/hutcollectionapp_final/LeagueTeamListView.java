@@ -1,6 +1,7 @@
 package com.example.jesse.hutcollectionapp_final;
 
 import android.content.Intent;
+import android.os.Vibrator;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -20,11 +21,14 @@ public class LeagueTeamListView extends ActionBarActivity {
     List<String> listDataHeader;
     HashMap<String, List<String>> listDataChild;
 
+    private Vibrator myVib;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_league_team_list_view);
 
+        myVib = (Vibrator) this.getSystemService(VIBRATOR_SERVICE);
 
         // get the listview
         expListView = (ExpandableListView) findViewById(R.id.lvExp);
@@ -36,6 +40,9 @@ public class LeagueTeamListView extends ActionBarActivity {
 
         // setting list adapter
         expListView.setAdapter(listAdapter);
+
+        //sets title
+        setTitle("Collection Check Lists");
     }
 
     @Override
@@ -109,20 +116,22 @@ public class LeagueTeamListView extends ActionBarActivity {
         listDataChild.put(listDataHeader.get(1), ahl);
         listDataChild.put(listDataHeader.get(2), shl);
 
-
         // Listview on child click listener
         expListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
 
             @Override
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
 
-                //do stuff when it takes you to ducks button press
+                //vibrates leagueheaderbackground on click
+                myVib.vibrate(50);
+
+                //do stuff when it takes you to ducks leagueheaderbackground press
                 Intent myIntent = new Intent(LeagueTeamListView.this, TeamCheckList.class); //creats intent to go to next page
 
                 //gets string value of the text view so it knows which items to pull
                 String text = ((TextView)(v.findViewById(R.id.lblListItem))).getText().toString();
 
-                myIntent.putExtra("KEY",text); //passes in text on the button
+                myIntent.putExtra("KEY",text); //passes in text on the leagueheaderbackground
                 LeagueTeamListView.this.startActivity(myIntent); //starts new page
 
                 return false;
@@ -135,6 +144,8 @@ public class LeagueTeamListView extends ActionBarActivity {
             @Override
             public void onGroupExpand(int groupPosition) {
 
+                //vibrates leagueheaderbackground on click
+                myVib.vibrate(50);
 
 //                Toast.makeText(getApplicationContext(),
 //                        listDataHeader.get(groupPosition) + " Expanded",
@@ -144,10 +155,6 @@ public class LeagueTeamListView extends ActionBarActivity {
 
 
     }
-
-
-
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -159,7 +166,7 @@ public class LeagueTeamListView extends ActionBarActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
+        // automatically handle clicks on the Home/Up leagueheaderbackground, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
