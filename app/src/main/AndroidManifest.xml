@@ -22,7 +22,8 @@
         </activity>
         <activity
             android:name=".TeamCheckList"
-            android:label="@string/title_activity_team_check_list" >
+            android:label="@string/title_activity_team_check_list"
+            android:windowSoftInputMode="adjustPan">
         </activity>
     </application>
     <uses-permission android:name="android.permission.VIBRATE"></uses-permission>
