@@ -6,5 +6,6 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_league_team_list_view">LeagueTeamListView</string>
     <string name="title_activity_team_check_list">TeamCheckList</string>
+    <string name="Money_Sign">$</string>
 
 </resources>

@@ -3,6 +3,8 @@ package com.example.jesse.hutcollectionapp_final;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -83,6 +85,11 @@ public class TeamCheckList extends ActionBarActivity {
                 InputMethodManager inputManager = (InputMethodManager)
                         getSystemService(Context.INPUT_METHOD_SERVICE);
 
+                //update profits
+                Intent intent = getIntent();
+                finish();
+                startActivity(intent);
+
                 //displays message telling users its been updated
                 Context context = getApplicationContext();
                 Toast.makeText(context, "Changes Saved", Toast.LENGTH_SHORT).show();
@@ -111,10 +118,32 @@ public class TeamCheckList extends ActionBarActivity {
             getSupportActionBar().setHomeAsUpIndicator(R.drawable.flames);
         }
 
+        //gets totalProfit lable
+        TextView totalProfitValueLabel = (TextView)findViewById(R.id.profitValue);
+        int totalProfit=0;
+        //loops through all prices paid and prices sold to get total profit
+        for(int i = 0;i<adapter.playerItems.size();i++)
+        {
+            int newPricePaid = adapter.playerItems.get(i).pricePaid;
+            int newPriceSold = adapter.playerItems.get(i).priceSold;
 
+            int profit = newPriceSold - newPricePaid;
+            totalProfit += profit;
+        }
+
+        //color of profit
+        if(totalProfit > 0)
+        {
+            totalProfitValueLabel.setTextColor(Color.parseColor("#039603"));
+        }
+        else if(totalProfit < 0)
+        {
+            totalProfitValueLabel.setTextColor(Color.RED);
+        }
+
+        //sets it variable totalProfit from adapter
+        totalProfitValueLabel.setText("" + totalProfit);
     }
-
-
 
     //method that checks if data has been saved and returns status
     public Boolean checkForSave(){

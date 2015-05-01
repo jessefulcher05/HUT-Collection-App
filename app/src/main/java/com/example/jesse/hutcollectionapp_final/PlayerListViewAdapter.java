@@ -2,8 +2,10 @@ package com.example.jesse.hutcollectionapp_final;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,7 +60,6 @@ public class PlayerListViewAdapter extends ArrayAdapter {
         //sets text watcher to this Edit Text
         pricePaidValue.addTextChangedListener(new pricePaidTextWatcher(convertView, position));
 
-
         //inserts price sold into
         EditText priceSoldValue = (EditText) convertView.findViewById(R.id.priceSold);
         //converts to string and sets value
@@ -99,6 +100,25 @@ public class PlayerListViewAdapter extends ArrayAdapter {
             }
         });
 
+        //gets the text view with profit
+        TextView tvProfit = (TextView)convertView.findViewById(R.id.textViewProfitAmount);
+
+        //gets price paid & sold value at this position
+        int priceSoldInt = playerItems.get(position).getPriceSold();
+        int pricePaidInt = playerItems.get(position).getPricePaid();
+        //gets profit w/ math
+        int profit = priceSoldInt - pricePaidInt;
+
+        //sets profit
+        tvProfit.setText("" + profit);
+        if(profit > 0)
+        {
+            tvProfit.setTextColor(Color.parseColor("#039603"));
+        }
+        else if(profit < 0)
+        {
+            tvProfit.setTextColor(Color.RED);
+        }
 
         return convertView;
 
