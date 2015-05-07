@@ -153,5 +153,18 @@
         android:layout_below="@+id/textViewMoneySign2"
         android:layout_alignBottom="@+id/textViewProfitLable" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Card"
+        android:id="@+id/btnviewCard"
+        android:layout_below="@+id/textView1"
+        android:textSize="10dp"
+        android:background="@android:color/white"
+        android:layout_alignBottom="@+id/textType"
+        android:layout_toRightOf="@+id/textType"
+        android:layout_toStartOf="@+id/pricePaid"
+        android:layout_toLeftOf="@+id/pricePaid" />
+
 
 </RelativeLayout>

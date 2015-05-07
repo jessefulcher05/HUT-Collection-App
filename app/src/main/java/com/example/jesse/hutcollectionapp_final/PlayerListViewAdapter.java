@@ -5,14 +5,18 @@ import android.content.Context;
 import android.graphics.Color;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.KeyEvent;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.PopupWindow;
 import android.widget.TextView;
+import android.view.ViewGroup.LayoutParams;
 
 import java.util.ArrayList;
 
@@ -73,7 +77,6 @@ public class PlayerListViewAdapter extends ArrayAdapter {
         //inserts cb status into checkbox
         CheckBox cb = (CheckBox) convertView.findViewById(R.id.checkBox1);
 
-
         //checks status of check box to determin if checked or not
         if (playerItems.get(position).getValue() == 1) {
             cb.setChecked(true);
@@ -119,6 +122,39 @@ public class PlayerListViewAdapter extends ArrayAdapter {
         {
             tvProfit.setTextColor(Color.RED);
         }
+
+        Button viewCard = (Button)convertView.findViewById(R.id.btnviewCard);
+        viewCard.setOnClickListener(new Button.OnClickListener()
+        {
+            @Override
+            public void onClick(View arg0) {
+                LayoutInflater layoutInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                View popupView = layoutInflater.inflate(R.layout.popup, null);
+                final PopupWindow popupWindow = new PopupWindow(
+                        popupView,
+                        LayoutParams.WRAP_CONTENT,
+                        LayoutParams.WRAP_CONTENT);
+
+                //dismiss button stuff inside pop up
+                Button btnDismiss = (Button)popupView.findViewById(R.id.closePopUpbtn);
+                btnDismiss.setOnClickListener(new Button.OnClickListener(){
+
+                    @Override
+                    public void onClick(View v) {
+                        // TODO Auto-generated method stub
+                        popupWindow.dismiss();
+                    }});
+
+                //new instance of the database so we can set the card image
+                PlayerDB db = new PlayerDB(context);
+                //gets team from db
+
+                ImageView cardImg = (ImageView)popupView.findViewById(R.id.imageViewTaemCard);
+                //sets image of card in pop up
+                cardImg.setImageResource(R.drawable.coyoteshome1);
+                popupWindow.showAtLocation(arg0, Gravity.CENTER, 0, 0);
+
+            }});
 
         return convertView;
 

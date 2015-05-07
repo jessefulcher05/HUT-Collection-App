@@ -42,7 +42,7 @@ public class LeagueTeamListView extends ActionBarActivity {
         expListView.setAdapter(listAdapter);
 
         //sets title
-        setTitle("Collection Check Lists");
+        setTitle("Collection Checklists");
     }
 
     @Override
@@ -130,8 +130,10 @@ public class LeagueTeamListView extends ActionBarActivity {
 
                 //gets string value of the text view so it knows which items to pull
                 String text = ((TextView)(v.findViewById(R.id.lblListItem))).getText().toString();
+                int teamId = childPosition;
 
-                myIntent.putExtra("KEY",text); //passes in text on the leagueheaderbackground
+                myIntent.putExtra("TEAMNAME",text); //passes in text on the leagueheaderbackground
+                myIntent.putExtra("ID", teamId); //passes in team id in list
                 LeagueTeamListView.this.startActivity(myIntent); //starts new page
 
                 return false;

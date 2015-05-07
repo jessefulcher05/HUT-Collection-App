@@ -69,6 +69,7 @@ public class PlayerDB extends SQLiteOpenHelper {
 
         //creates arraylist of raw player list
         ArrayList<String> rawPlayerList = new ArrayList<>();
+
         //anaheim ducks
         rawPlayerList.add("values ('Anaheim Ducks','R. Getzlaf','0','C','PWF','0','0' )");
         rawPlayerList.add("values ('Anaheim Ducks','C. Perry','0','RW','SNP','0','0' )");
@@ -95,9 +96,64 @@ public class PlayerDB extends SQLiteOpenHelper {
         rawPlayerList.add("values ('Anaheim Ducks','T. Jackman','0','RW','GRN','0','0' )");
         rawPlayerList.add("values ('Anaheim Ducks','R. Rakell','0','RW','SNP','0','0' )");
 
+        //ducks jerseys
+        //home
+        rawPlayerList.add("values('Anaheim Ducks', 'Home 1', '0', '', '', '0' , '0' )");
+        rawPlayerList.add("values('Anaheim Ducks', 'Home 2', '0', '', '', '0' , '0' )");
+        rawPlayerList.add("values('Anaheim Ducks', 'Home 3', '0', '', '', '0' , '0' )");
+        rawPlayerList.add("values('Anaheim Ducks', 'Home 4', '0', '', '', '0' , '0' )");
+        rawPlayerList.add("values('Anaheim Ducks', 'Home 5', '0', '', '', '0' , '0' )");
+        //away
+        rawPlayerList.add("values('Anaheim Ducks', 'Away 1', '0', '', '', '0' , '0' )");
+        rawPlayerList.add("values('Anaheim Ducks', 'Away 2', '0', '', '', '0' , '0' )");
+        rawPlayerList.add("values('Anaheim Ducks', 'Away 3', '0', '', '', '0' , '0' )");
+        rawPlayerList.add("values('Anaheim Ducks', 'Away 4', '0', '', '', '0' , '0' )");
+        //logo
+        rawPlayerList.add("values('Anaheim Ducks', 'Logo', '0', '', '', '0' , '0' )");
+
         //Arizona coyotes
         rawPlayerList.add("values ('Arizona Coyotes','M. Smith','0','C','2WF','10','10' )");
         rawPlayerList.add("values ('Arizona Coyotes','L. Jones','0','C','2WF','10','10' )");
+
+        //Arizona Coyotes
+        rawPlayerList.add("values ('Arizona Coyotes','M. Smith','0','G','HYB','0','0' )");
+        rawPlayerList.add("values ('Arizona Coyotes','K. Yandle','0','LD','OFD','0','0' )");
+        rawPlayerList.add("values ('Arizona Coyotes','M. Hanzal','0','C','TWF','0','0' )");
+        rawPlayerList.add("values ('Arizona Coyotes','M. Boedker','0','LW','SNP','0','0' )");
+        rawPlayerList.add("values ('Arizona Coyotes','O. Ekman-Larsson','0','LD','OFD','0','0' )");
+        rawPlayerList.add("values ('Arizona Coyotes','S. Gagner','0','C','PLY','0','0' )");
+        rawPlayerList.add("values ('Arizona Coyotes','S. Doan','0','RW','PWF','0','0' )");
+        rawPlayerList.add("values ('Arizona Coyotes','A. Vermette','0','C','TWF','0','0' )");
+        rawPlayerList.add("values ('Arizona Coyotes','M. Erat','0','RW','TWF','0','0' )");
+        rawPlayerList.add("values ('Arizona Coyotes','L. Korpikoski','0','LW','TWF','0','0' )");
+        rawPlayerList.add("values ('Arizona Coyotes','Z. Michaek','0','RD','DFD','0','0' )");
+        rawPlayerList.add("values ('Arizona Coyotes','B. Gormley','0','LD','TWD','0','0' )");
+        rawPlayerList.add("values ('Arizona Coyotes','D. Morris','0','RD','DFD','0','0' )");
+        rawPlayerList.add("values ('Arizona Coyotes','B. McMillan','0','C','TWF','0','0' )");
+        rawPlayerList.add("values ('Arizona Coyotes','M. Stone','0','RD','TWD','0','0' )");
+        rawPlayerList.add("values ('Arizona Coyotes','K. Chipchura','0','C','GRN','0','0' )");
+        rawPlayerList.add("values ('Arizona Coyotes','D. Dubnyk','0','G','HYB','0','0' )");
+        rawPlayerList.add("values ('Arizona Coyotes','D. Schlemko','0','LD','TWD','0','0' )");
+        rawPlayerList.add("values ('Arizona Coyotes','J. Vitale','0','C','TWF','0','0' )");
+        rawPlayerList.add("values ('Arizona Coyotes','R. Klinkhammer','0','C','TWF','0','0' )");
+        rawPlayerList.add("values ('Arizona Coyotes','T. Rieder','0','RW','SNP','0','0' )");
+        rawPlayerList.add("values ('Arizona Coyotes','C. Murphy','0','RD','DFD','0','0' )");
+        rawPlayerList.add("values ('Arizona Coyotes','B Crombeen','0','RW','GRN','0','0' )");
+        rawPlayerList.add("values ('Arizona Coyotes','M. McKenna','0','G','HYB','0','0' )");
+        rawPlayerList.add("values ('Arizona Coyotes','A. Bolduc','0','C','GRN','0','0' )");
+        rawPlayerList.add("values ('Arizona Coyotes','A. Campbell','0','LD','DFD','0','0' )");
+        rawPlayerList.add("values ('Arizona Coyotes','D. Reese','0','RD','TWD','0','0' )");
+
+        //home jersey
+        rawPlayerList.add("values ('Arizona Coyotes','Home 1','0','','','0','0' )");
+        rawPlayerList.add("values ('Arizona Coyotes','Home 2','0','','','0','0' )");
+        rawPlayerList.add("values ('Arizona Coyotes','Home 3','0','','','0','0' )");
+        //away jersey
+        rawPlayerList.add("values ('Arizona Coyotes','Away 1','0','','','0','0' )");
+        rawPlayerList.add("values ('Arizona Coyotes','Away 2','0','','','0','0' )");
+        rawPlayerList.add("values ('Arizona Coyotes','Away 3','0','','','0','0' )");
+        //logo
+        rawPlayerList.add("values ('Arizona Coyotes','Logo','0','','','0','0' )");
 
         //loops through all palyers in array and adds them to the db
         for(int i = 0; i <rawPlayerList.size();i++)

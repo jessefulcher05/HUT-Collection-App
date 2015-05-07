@@ -33,6 +33,9 @@ public class TeamCheckList extends ActionBarActivity {
     //playerdb
     PlayerDB db = new PlayerDB(this);
 
+    //teamId
+    int teamId;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -42,11 +45,18 @@ public class TeamCheckList extends ActionBarActivity {
         Bundle extras = getIntent().getExtras();
         if(extras !=null) {
             //passes in text on leagueheaderbackground to equal teamName
-            teamName = extras.getString("KEY");
+            teamName = extras.getString("TEAMNAME"); //get's team name from previous class
+            teamId = extras.getInt("ID"); //get's id from previous class
 
             //sets title to team name
             setTitle(teamName);
         }
+
+        //creates new instance if ImgLocation
+        ImgLocation myLoc = new ImgLocation();
+
+        //sets image in icon bar to image in ImgLocation class
+        getSupportActionBar().setHomeAsUpIndicator(myLoc.getTeamImagesAtIndex(teamId));
 
         //turns on back navigation in action bar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -95,28 +105,6 @@ public class TeamCheckList extends ActionBarActivity {
                 Toast.makeText(context, "Changes Saved", Toast.LENGTH_SHORT).show();
             }
         });
-
-        if(teamName.equalsIgnoreCase("Anaheim Ducks"))
-        {
-            //if team name is ducks set icon to ducks
-            getSupportActionBar().setHomeAsUpIndicator(R.drawable.ducks);
-        }
-        else if(teamName.equalsIgnoreCase("Arizona Coyotes"))
-        {
-            getSupportActionBar().setHomeAsUpIndicator(R.drawable.coyotes);
-        }
-        else if(teamName.equalsIgnoreCase("Boston Bruins"))
-        {
-            getSupportActionBar().setHomeAsUpIndicator(R.drawable.bruins);
-        }
-        else if(teamName.equalsIgnoreCase("Buffalo Sabres"))
-        {
-            getSupportActionBar().setHomeAsUpIndicator(R.drawable.sabres);
-        }
-        else if(teamName.equalsIgnoreCase("Calgary Flames"))
-        {
-            getSupportActionBar().setHomeAsUpIndicator(R.drawable.flames);
-        }
 
         //gets totalProfit lable
         TextView totalProfitValueLabel = (TextView)findViewById(R.id.profitValue);
