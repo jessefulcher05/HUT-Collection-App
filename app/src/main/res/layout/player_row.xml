@@ -164,7 +164,8 @@
         android:layout_alignBottom="@+id/textType"
         android:layout_toRightOf="@+id/textType"
         android:layout_toStartOf="@+id/pricePaid"
-        android:layout_toLeftOf="@+id/pricePaid" />
+        android:layout_toLeftOf="@+id/pricePaid"
+        android:visibility="gone"/> <!--hides card unless its a away, home or logo in login-->
 
 
 </RelativeLayout>

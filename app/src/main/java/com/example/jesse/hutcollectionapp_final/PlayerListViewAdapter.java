@@ -18,6 +18,7 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.view.ViewGroup.LayoutParams;
 
+import java.sql.Array;
 import java.util.ArrayList;
 
 
@@ -124,6 +125,13 @@ public class PlayerListViewAdapter extends ArrayAdapter {
         }
 
         Button viewCard = (Button)convertView.findViewById(R.id.btnviewCard);
+
+        //if item does not contain team or log then hide the button
+        if(playerItems.get(position).getName().contains("Home") ||playerItems.get(position).getName().contains("Away") ||playerItems.get(position).getName().contains("Logo"))
+        {
+            viewCard.setVisibility(View.VISIBLE);
+        }
+
         viewCard.setOnClickListener(new Button.OnClickListener()
         {
             @Override
@@ -145,13 +153,15 @@ public class PlayerListViewAdapter extends ArrayAdapter {
                         popupWindow.dismiss();
                     }});
 
-                //new instance of the database so we can set the card image
-                PlayerDB db = new PlayerDB(context);
-                //gets team from db
-
                 ImageView cardImg = (ImageView)popupView.findViewById(R.id.imageViewTaemCard);
-                //sets image of card in pop up
-                cardImg.setImageResource(R.drawable.coyoteshome1);
+
+                //creates instance of PlayerCardImgLocation
+                PlayerCardImgLocation myLoc = new PlayerCardImgLocation();
+
+                //sets the image to the pic located at the double array
+                cardImg.setImageResource(myLoc.getLocation(playerItems.get(position).getTeam(),playerItems.get(position).getName()));
+
+                //opens the pop up window I created and centers in the middle
                 popupWindow.showAtLocation(arg0, Gravity.CENTER, 0, 0);
 
             }});
