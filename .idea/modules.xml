@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/HUT-Collection-App.iml" filepath="$PROJECT_DIR$/HUT-Collection-App.iml" />
       <module fileurl="file://$PROJECT_DIR$/HUTCollectionApp-Final.iml" filepath="$PROJECT_DIR$/HUTCollectionApp-Final.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
