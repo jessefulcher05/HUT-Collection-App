@@ -70,7 +70,9 @@ public class PlayerDB extends SQLiteOpenHelper {
         //creates arraylist of raw player list
         ArrayList<String> rawPlayerList = new ArrayList<>();
 
-        //anaheim ducks
+        ///////////////////////
+        /////anaheim ducks/////
+        //////////////////////
         rawPlayerList.add("values ('Anaheim Ducks','R. Getzlaf','0','C','PWF','0','0' )");
         rawPlayerList.add("values ('Anaheim Ducks','C. Perry','0','RW','SNP','0','0' )");
         rawPlayerList.add("values ('Anaheim Ducks','R. Kesler','0','C','TWF','0','0' )");
@@ -111,11 +113,9 @@ public class PlayerDB extends SQLiteOpenHelper {
         //logo
         rawPlayerList.add("values('Anaheim Ducks', 'Logo', '0', '', '', '0' , '0' )");
 
-        //Arizona coyotes
-        rawPlayerList.add("values ('Arizona Coyotes','M. Smith','0','C','2WF','10','10' )");
-        rawPlayerList.add("values ('Arizona Coyotes','L. Jones','0','C','2WF','10','10' )");
-
-        //Arizona Coyotes
+        //////////////////////////////////
+        ////////Arizona Coyotes///////////
+        /////////////////////////////////
         rawPlayerList.add("values ('Arizona Coyotes','M. Smith','0','G','HYB','0','0' )");
         rawPlayerList.add("values ('Arizona Coyotes','K. Yandle','0','LD','OFD','0','0' )");
         rawPlayerList.add("values ('Arizona Coyotes','M. Hanzal','0','C','TWF','0','0' )");
@@ -154,6 +154,161 @@ public class PlayerDB extends SQLiteOpenHelper {
         rawPlayerList.add("values ('Arizona Coyotes','Away 3','0','','','0','0' )");
         //logo
         rawPlayerList.add("values ('Arizona Coyotes','Logo','0','','','0','0' )");
+
+
+        //////////////////////////////////
+        ////////Boston Bruins///////////
+        /////////////////////////////////
+        rawPlayerList.add("values ('Boston Bruins','T. Rask','0','G','HYB','0','0' )");
+        rawPlayerList.add("values ('Boston Bruins','Z. Chara','0','LD','TWD','0','0' )");
+        rawPlayerList.add("values ('Boston Bruins','P. Bergeron','0','C','TWF','0','0' )");
+        rawPlayerList.add("values ('Boston Bruins','D. Krejci','0','C','PLY','0','0' )");
+        rawPlayerList.add("values ('Boston Bruins','M. Lucic','0','LW','PWF','0','0' )");
+        rawPlayerList.add("values ('Boston Bruins','B. Marchand','0','LW','TWF','0','0' )");
+        rawPlayerList.add("values ('Boston Bruins','L. Eriksson','0','RW','PLY','0','0' )");
+        rawPlayerList.add("values ('Boston Bruins','D. Seidenberg','0','LD','DFD','0','0' )");
+        rawPlayerList.add("values ('Boston Bruins','J. Boychuk','0','RD','DFD','0','0' )");
+        rawPlayerList.add("values ('Boston Bruins','R. Smith','0','RW','SNP','0','0' )");
+        rawPlayerList.add("values ('Boston Bruins','C. Soderberg','0','C','TWF','0','0' )");
+        rawPlayerList.add("values ('Boston Bruins','D. Hamilton','0','C','TWF','0','0' )");
+        rawPlayerList.add("values ('Boston Bruins','T. Krug','0','LD','OFD','0','0' )");
+        rawPlayerList.add("values ('Boston Bruins','C. Kelly','0','C','GRN','0','0' )");
+        rawPlayerList.add("values ('Boston Bruins','A. McQuaid','0','RD','DFD','0','0' )");
+        rawPlayerList.add("values ('Boston Bruins','D. Pallie','0','LW','TWF','0','0' )");
+        rawPlayerList.add("values ('Boston Bruins','G. Campbell','0','C','GRN','0','0' )");
+        rawPlayerList.add("values ('Boston Bruins','N. Svedberg','0','G','HYB','0','0' )");
+        rawPlayerList.add("values ('Boston Bruins','S. Griffith','0','RW','SNP','0','0' )");
+        rawPlayerList.add("values ('Boston Bruins','C. Potter','0','RD','TWD','0','0' )");
+        rawPlayerList.add("values ('Boston Bruins','J. Caron','0','RW','PWF','0','0' )");
+        rawPlayerList.add("values ('Boston Bruins','K. Miller','0','RD','DFD','0','0' )");
+        rawPlayerList.add("values ('Boston Bruins','C. Cunningham','0','LW','PLY','0','0' )");
+        rawPlayerList.add("values ('Boston Bruins','M. Bartowski','0','LD','DFD','0','0' )");
+        rawPlayerList.add("values ('Boston Bruins','R. Spooner','0','C','PLY','0','0' )");
+        rawPlayerList.add("values ('Boston Bruins','M. Savard','0','C','PLY','0','0' )");
+        rawPlayerList.add("values ('Boston Bruins','M. Fraser','0','RW','PWF','0','0' )");
+        rawPlayerList.add("values ('Boston Bruins','J. Smith','0','G','HYB','0','0' )");
+        rawPlayerList.add("values ('Boston Bruins','C. Breen','0','LD','DFD','0','0' )");
+
+        //home jersey
+        rawPlayerList.add("values ('Boston Bruins','Home 1','0','','','0','0' )");
+        rawPlayerList.add("values ('Boston Bruins','Home 2','0','','','0','0' )");
+        rawPlayerList.add("values ('Boston Bruins','Home 3','0','','','0','0' )");
+        rawPlayerList.add("values ('Boston Bruins','Home 4','0','','','0','0' )");
+        rawPlayerList.add("values ('Boston Bruins','Home 5','0','','','0','0' )");
+        //away jersey
+        rawPlayerList.add("values ('Boston Bruins','Away 1','0','','','0','0' )");
+        rawPlayerList.add("values ('Boston Bruins','Away 2','0','','','0','0' )");
+        rawPlayerList.add("values ('Boston Bruins','Away 3','0','','','0','0' )");
+        //logo
+        rawPlayerList.add("values ('Boston Bruins','Logo','0','','','0','0' )");
+
+        //////////////////////////////////
+        ////////Buffalo Sabres///////////
+        /////////////////////////////////
+
+        //////////////////////////////////
+        ////////Calgary Flames///////////
+        /////////////////////////////////
+
+        //////////////////////////////////
+        /////////Carolina Hurricanes/////
+        /////////////////////////////////
+
+        //////////////////////////////////
+        ////////Chicago Blackhawks///////////
+        /////////////////////////////////
+
+        //////////////////////////////////
+        ////////Colorado Avalanche///////////
+        /////////////////////////////////
+
+        //////////////////////////////////
+        ////////Columbus Blue Jackets///////////
+        /////////////////////////////////
+
+        //////////////////////////////////
+        ////////Dallas Stars///////////
+        /////////////////////////////////
+
+        //////////////////////////////////
+        ////////Detroid Red Wings///////////
+        /////////////////////////////////
+
+        //////////////////////////////////
+        ////////Edmonton Oilers///////////
+        /////////////////////////////////
+
+        //////////////////////////////////
+        //////////Florida Panthers///////////
+        /////////////////////////////////
+
+        //////////////////////////////////
+        ////////Los Angeles Kings///////////
+        /////////////////////////////////
+
+        //////////////////////////////////
+        ////////Minnesota Wild///////////
+        /////////////////////////////////
+
+        //////////////////////////////////
+        ////////Montreal CAnadiens///////////
+        /////////////////////////////////
+
+        //////////////////////////////////
+        ////////Nashville Prdators///////////
+        /////////////////////////////////
+
+        //////////////////////////////////
+        ////////New Jersey Devils///////////
+        /////////////////////////////////
+
+        //////////////////////////////////
+        ////////New York Islanders///////////
+        /////////////////////////////////
+
+        //////////////////////////////////
+        ////////New York Rangers///////////
+        /////////////////////////////////
+
+        //////////////////////////////////
+        ////////Ottawa Senators///////////
+        /////////////////////////////////
+
+        //////////////////////////////////
+        ////////Philadephia Flyers///////////
+        /////////////////////////////////
+
+        //////////////////////////////////
+        ////////Pittsburg Penguins///////////
+        /////////////////////////////////
+
+        //////////////////////////////////
+        ////////San Jose Sharks///////////
+        /////////////////////////////////
+
+        //////////////////////////////////
+        ////////St Lousi Blues///////////
+        /////////////////////////////////
+
+        //////////////////////////////////
+        ////////Tampa bay Lightning///////////
+        /////////////////////////////////
+
+        //////////////////////////////////
+        ////////Toronto Maple Leafs///////////
+        /////////////////////////////////
+
+        //////////////////////////////////
+        ////////Vancouver CAnucks///////////
+        /////////////////////////////////
+
+        //////////////////////////////////
+        ////////Washington Capitals///////////
+        /////////////////////////////////
+
+        //////////////////////////////////
+        ////////Winnipeg Jets///////////
+        /////////////////////////////////
 
         //loops through all palyers in array and adds them to the db
         for(int i = 0; i <rawPlayerList.size();i++)
